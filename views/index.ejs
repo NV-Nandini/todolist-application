@@ -1,0 +1,29 @@
+<%- include("header")%>
+    <title>To do list</title>
+    <link rel="stylesheet" href="../public/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+</head>
+<main>
+<body>
+   
+    <div class="box" id="heading">    
+    <h1 ><%=listTitle%></h1>
+</div>
+<div class="box" id="">
+    <% for( i=0;i < nextItem.length ;i++){%>
+        <div class="item">
+            <input type="checkbox" ><p><%=nextItem[i]%></p></input>
+        </div> 
+        <%}%>
+        
+        <form action="/" method="post">
+            <input type="text" name="newItem" autocomplete="off" placeholder="Add New Item">
+            <input type="hidden" name="list" value="<%= listTitle %>">
+            <button type="submit">+</button>
+        </form>  
+       
+</div>
+</body>
+</main>
+<footer><%- include("footer")%></footer>
